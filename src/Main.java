@@ -25,15 +25,15 @@ public class Main {
                     lowerEn++;
                 }
             }
-            System.out.println(upperEn + " " + lowerEn);
         } catch (IOException e) {
             throw new FileNotFoundException("File was not found");
         }
         System.out.println("Enter pathname: ");
         File newFile = new File(scanner.nextLine());
         if (!newFile.exists()) {
-            newFile.createNewFile();
-            System.out.printf("New file: \"%s\" created\n", newFile.getName());
+            if (newFile.createNewFile()) {
+                System.out.printf("New file: \"%s\" created\n", newFile.getName());
+            }
         }
         try (FileWriter fileWriter = new FileWriter(newFile)) {
             fileWriter.append("\nUpper - ");
