@@ -36,10 +36,10 @@ public class Main {
             }
         }
         try (FileWriter fileWriter = new FileWriter(newFile)) {
-            fileWriter.append("\nUpper - ");
-            fileWriter.append(Integer.toString(upperEn));
-            fileWriter.append("\nLower - ");
-            fileWriter.append(Integer.toString(lowerEn));
+            fileWriter.write("\nUpper - ");
+            fileWriter.write(Integer.toString(upperEn));
+            fileWriter.write("\nLower - ");
+            fileWriter.write(Integer.toString(lowerEn));
         } catch (IOException e) {
             throw new FileNotFoundException("File was not found");
         }
