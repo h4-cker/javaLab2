@@ -32,14 +32,15 @@ public class Main {
         File newFile = new File(scanner.nextLine());
         if (!newFile.exists()) {
             if (newFile.createNewFile()) {
-                System.out.printf("New file: \"%s\" created\n", newFile.getName());
+                System.out.printf("New file \"%s\" was created\n", newFile.getName());
             }
         }
-        try (FileWriter fileWriter = new FileWriter(newFile)) {
-            fileWriter.write("\nUpper - ");
+        try (FileWriter fileWriter = new FileWriter(newFile, true)) {
+            fileWriter.write("\nfile: " + filename + "\nupper=");
             fileWriter.write(Integer.toString(upperEn));
-            fileWriter.write("\nLower - ");
+            fileWriter.write(" lower=");
             fileWriter.write(Integer.toString(lowerEn));
+            System.out.printf("File \"%s\" was updated\n", newFile.getName());
         } catch (IOException e) {
             throw new FileNotFoundException("File was not found");
         }
