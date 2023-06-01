@@ -26,7 +26,7 @@ jobs:
       - name: Build java
         run: | 
             javac src/Main.java
-            jar -cf javaLab.jar Main.class
+            jar -cf javaLab.jar src/Main.class
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
