@@ -24,7 +24,7 @@ jobs:
           java-version: '17'
           
       - name: Run java
-        run: java src/Main.java
+        run: javac src/Main.java
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
