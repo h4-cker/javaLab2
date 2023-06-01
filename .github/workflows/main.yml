@@ -17,8 +17,8 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v3.9.0
         with: 
-          java-version: 17
-          distribution: oracle
+          java-version: '17'
+          distribution: 'oracle'
           
       - name: Run java
         run: java Main.java
@@ -29,3 +29,8 @@ jobs:
           name: java_lab
           path: Main.class
           retention-days: 5
+
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.1.1
+        with:
+          name: java_lab
