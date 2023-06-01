@@ -24,13 +24,14 @@ jobs:
 #           java-version: '17'
           
       - name: Build java
-        run: javac src/Main.java
+        run: |
+          javapacker deploy -native exe
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
         with:
           name: java_lab
-          path: src/Main.class
+          path: src/*.exe
           retention-days: 5
 
 #       - name: Download a Build Artifact
