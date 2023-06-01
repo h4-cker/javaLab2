@@ -17,11 +17,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Setup Java JDK
-        uses: actions/setup-java@v3
-        with: 
-          distribution: 'oracle'
-          java-version: '17'
+#       - name: Setup Java JDK
+#         uses: actions/setup-java@v3
+#         with: 
+#           distribution: 'oracle'
+#           java-version: '17'
           
       - name: Build java
         run: javac src/Main.java
@@ -33,7 +33,7 @@ jobs:
           path: src/Main.class
           retention-days: 5
 
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: java_lab
+#       - name: Download a Build Artifact
+#         uses: actions/download-artifact@v3
+#         with:
+#           name: java_lab
