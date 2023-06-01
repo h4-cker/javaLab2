@@ -23,14 +23,14 @@ jobs:
           distribution: 'oracle'
           java-version: '17'
           
-      - name: Run java
+      - name: Build java
         run: javac src/Main.java
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
           name: java_lab
-          path: Main.class
+          path: src/Main.class
           retention-days: 5
 
       - name: Download a Build Artifact
